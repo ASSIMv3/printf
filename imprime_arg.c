@@ -13,11 +13,12 @@ int (*imprime_arg(char c))(va_list, int *)
 		{'s', imprime_str},
 		{'%', imprime_percent},
 		{'i', imprime_i_d},
-		{'d', imprime_i_d}
+		{'d', imprime_i_d},
+		{'b', imprime_binary}
 	};
 	int i = 0;
 
-	while (i < 5)
+	while (i < 6)
 	{
 		if (c == data_types[i].c)
 			return (data_types[i].func);
