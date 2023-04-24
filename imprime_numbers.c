@@ -46,7 +46,7 @@ int imprime_i_d(va_list given_args, int *flags)
 }
 
 /**
- * imprime_binary - a function that prints an unsigned integer
+ * imprime_binary - a function that prints binary
  *
  * @given_args: a list of a given arguments.
  * @flags: list of flags
@@ -77,5 +77,41 @@ int imprime_binary(va_list given_args, __attribute__((unused)) int *flags)
 	for (j = i - 1; j >= 0; j--)
 		_putchar(binary[j] + '0');
 
+	return (printed_chars);
+}
+
+/**
+ * imprime_unsigned - a function that prints an unsigned integer
+ *
+ * @given_args: a list of a given arguments.
+ * @flags: list of flags
+ * Return: the size of the number.
+ */
+int imprime_unsigned(va_list given_args, __attribute__((unused)) int *flags)
+{
+	unsigned int num;
+	int digits[32];
+	int printed_chars, i = 0, j;
+
+	num = va_arg(given_args, unsigned int);
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	printed_chars = 0;
+	while (num > 0)
+	{
+		digits[i] = num % 10;
+		num /= 10;
+		i++;
+		printed_chars++;
+	}
+
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(digits[j] + '0');
+	}
 	return (printed_chars);
 }
