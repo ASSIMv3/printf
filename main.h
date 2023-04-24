@@ -11,6 +11,7 @@ int (*imprime_arg(char c))(va_list, int *);
 int imprime_char(va_list given_args, int *flags);
 int imprime_str(va_list given_args, int *flags);
 int imprime_percent(va_list given_args, int *flags);
+int imprime_i_d(va_list given_args, int *flags);
 
 /**
   * struct printer - function to be printed
