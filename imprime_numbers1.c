@@ -35,3 +35,38 @@ int imprime_octal(va_list given_args, __attribute__((unused)) int *flags)
 
 	return (printed_chars);
 }
+
+/**
+ * imprime_hex_lower - a function that prints a lower-case hexadecimal
+ *
+ * @given_args: a list of a given arguments.
+ * @flags: list of flags
+ * Return: the size of the number.
+ */
+int imprime_hex_lower(va_list given_args, __attribute__((unused)) int *flags)
+{
+	unsigned int num;
+	char hex_digits[] = "0123456789abcdef";
+	char digits[9];
+	int i, j, printed_chars;
+
+	num = va_arg(given_args, unsigned int);
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	i = 0;
+	printed_chars = 0;
+	while (num > 0)
+	{
+		digits[i] = hex_digits[num % 16];
+		num /= 16;
+		i++, printed_chars++;
+	}
+
+	for (j = i - 1; j >= 0; j--)
+		_putchar(digits[j]);
+	return (printed_chars);
+}
