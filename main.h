@@ -16,6 +16,7 @@ int imprime_binary(va_list given_args, int *flags);
 int imprime_unsigned(va_list given_args, int *flags);
 int imprime_octal(va_list given_args, int *flags);
 int imprime_hex_lower(va_list given_args, int *flags);
+int imprime_hex_upper(va_list given_args, int *flags);
 
 /**
   * struct printer - function to be printed

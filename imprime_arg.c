@@ -17,11 +17,12 @@ int (*imprime_arg(char c))(va_list, int *)
 		{'b', imprime_binary},
 		{'u', imprime_unsigned},
 		{'o', imprime_octal},
-		{'x', imprime_hex_lower}
+		{'x', imprime_hex_lower},
+		{'X', imprime_hex_upper}
 	};
 	int i = 0;
 
-	while (i < 9)
+	while (i < 10)
 	{
 		if (c == data_types[i].c)
 			return (data_types[i].func);
