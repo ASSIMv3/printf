@@ -13,6 +13,7 @@ int imprime_str(va_list given_args, int *flags);
 int imprime_percent(va_list given_args, int *flags);
 int imprime_i_d(va_list given_args, int *flags);
 int imprime_binary(va_list given_args, int *flags);
+int imprime_unsigned(va_list given_args, int *flags);
 
 /**
   * struct printer - function to be printed
