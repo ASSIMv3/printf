@@ -75,9 +75,9 @@ int get_fl(char c, int *flags)
   * @fl: list of flags
   * Return: void
   */
-void set_zeros(int *flags)
+void set_zeros(int *fl)
 {
-	flags[0] = 0;
-	flags[1] = 0;
-	flags[2] = 0;
+	fl[0] = 0;
+	fl[1] = 0;
+	fl[2] = 0;
 }
