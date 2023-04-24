@@ -4,7 +4,7 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
-int _putchar(char c);
+int _putchar(char character);
 void set_zeros(int *fl);
 int get_fl(char c, int *flags);
 int (*imprime_arg(char c))(va_list, int *);
