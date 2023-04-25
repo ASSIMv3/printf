@@ -21,7 +21,8 @@ int (*imprime_arg(char c))(va_list, int *)
 		{'X', imprime_hex_upper},
 		{'S', imprime_String},
 		{'p', imprime_pointer},
-		{'r', imprime_reverse}
+		{'r', imprime_reverse},
+		{'R', imprime_rot13}
 	};
 	int i = 0;
 

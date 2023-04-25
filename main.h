@@ -20,6 +20,7 @@ int imprime_hex_upper(va_list given_args, int *flags);
 int imprime_String(va_list given_args, int *flags);
 int imprime_pointer(va_list given_args, int *flags);
 int imprime_reverse(va_list given_args, int *flags);
+int imprime_rot13(va_list given_args, __attribute__((unused)) int *flags);
 
 /**
   * struct printer - function to be printed

@@ -84,3 +84,37 @@ int imprime_reverse(va_list given_args, __attribute__((unused)) int *flags)
 
 	return (i);
 }
+
+/**
+ * imprime_rot13 - a function that prints the rot13'ed string
+ *
+ * @given_args: a list of a given arguments.
+ * @flags: list of flags
+ * Return: the size of the number.
+ */
+int imprime_rot13(va_list given_args, __attribute__((unused)) int *flags)
+{
+	char *str;
+	int i, j;
+	char rot13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+
+	str = va_arg(given_args, char *);
+	if (!str)
+		return (_printf("(null)"));
+
+	for (j = 0; s[j]; j++)
+	{
+		if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
+			_putchar(s[j]);
+		else
+		{
+			for (i = 0; i <= 52; i++)
+			{
+				if (s[j] == rot13[i])
+					_putchar(ROT13[i]);
+			}
+		}
+	}
+	return (j);
+}
