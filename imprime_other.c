@@ -18,22 +18,14 @@ int imprime_pointer(va_list given_args, int *flags)
 	ptr = va_arg(given_args, void *);
 	if (!ptr)
 		return (_printf("(nil)"));
-
 	addr = (unsigned long int)ptr;
-	size = 0;
-	flag = 0;
+	size = 0, flag = 0;
 	if (flags[0])
-	{
-		_putchar('+');
-		flag++;
-	}
+		_putchar('+'), flag++;
 	else if (flags[1])
-	{
-		_putchar(' ');
-		flag++;
-	}
-	_putchar('0');
-	_putchar('x');
+		_putchar(' '), flag++;
+
+	_putchar('0'), _putchar('x');
 
 	if (!addr)
 	{
