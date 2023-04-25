@@ -19,11 +19,12 @@ int (*imprime_arg(char c))(va_list, int *)
 		{'o', imprime_octal},
 		{'x', imprime_hex_lower},
 		{'X', imprime_hex_upper},
-		{'S', imprime_String}	
+		{'S', imprime_String},
+		{'p', imprime_pointer}
 	};
 	int i = 0;
 
-	while (i < 11)
+	while (i < 12)
 	{
 		if (c == data_types[i].c)
 			return (data_types[i].func);
