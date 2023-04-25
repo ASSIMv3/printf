@@ -59,3 +59,42 @@ int imprime_percent(__attribute__((unused)) va_list given_args, int *flags)
 	_putchar('%');
 	return (1);
 }
+
+/**
+ * imprime_String - a funtion that prints a string
+ *
+ * @given_args: a list of given arguments
+ * @flags: a list of flags
+ *
+ * Return: length of the string
+ */
+int imprime_String(va_list given_args, __attribute__((unused)) int *flags)
+{
+	char *str, *non_printable;
+	char ch;
+	int printed_chars, i;
+
+	str = va_arg(given_args, char *);
+	if (!str)
+		str = "(null)";
+
+	i = 0;
+	printed_chars = 0;
+	while ((ch = str[i++]) != '\0')
+	{
+		if (ch < 32 || ch >= 127)
+		{
+			if (ch <= 15)
+				non_printable = "\\x0";
+			else
+				non_printable = "\\x";
+			printed_chars += _printf("%s%X", non_printable, (int)ch);
+		}
+		else
+		{
+			_putchar(ch);
+			printed_chars++;
+		}
+	
+		return (printed_chars);
+}
