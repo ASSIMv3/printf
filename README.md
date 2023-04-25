@@ -1,2 +1,2 @@
 # printf
-A custom printf project for ALX Software Engineering
+A 'custom printf' group project for ALX Software Engineering program
