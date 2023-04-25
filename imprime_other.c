@@ -103,15 +103,15 @@ int imprime_rot13(va_list given_args, __attribute__((unused)) int *flags)
 	if (!str)
 		return (_printf("(null)"));
 
-	for (j = 0; s[j]; j++)
+	for (j = 0; str[j]; j++)
 	{
-		if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
-			_putchar(s[j]);
+		if (str[j] < 'A' || (str[j] > 'Z' && str[j] < 'a') || str[j] > 'z')
+			_putchar(str[j]);
 		else
 		{
 			for (i = 0; i <= 52; i++)
 			{
-				if (s[j] == rot13[i])
+				if (str[j] == rot13[i])
 					_putchar(ROT13[i]);
 			}
 		}

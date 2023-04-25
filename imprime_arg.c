@@ -26,7 +26,7 @@ int (*imprime_arg(char c))(va_list, int *)
 	};
 	int i = 0;
 
-	while (i < 13)
+	while (i < 14)
 	{
 		if (c == data_types[i].c)
 			return (data_types[i].func);
