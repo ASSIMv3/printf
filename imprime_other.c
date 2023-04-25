@@ -7,12 +7,12 @@
  * @flags: list of flags
  * Return: the size of the number.
  */
-int imprime_pointer(va_list given_args, __attribute__((unused)) int *flags)
+int imprime_pointer(va_list given_args, int *flags)
 {
 	void *ptr;
 	unsigned long int addr;
 	unsigned int hex_digit[100];
-	int i, size;
+	int i, size, flag;
 	char ch;
 
 	ptr = va_arg(given_args, void *);
@@ -21,7 +21,17 @@ int imprime_pointer(va_list given_args, __attribute__((unused)) int *flags)
 
 	addr = (unsigned long int)ptr;
 	size = 0;
-
+	flag = 0;
+	if (flags[0])
+	{
+		_putchar('+');
+		flag++;
+	}
+	else if (flags[1])
+	{
+		_putchar(' ');
+		flag++;
+	}
 	_putchar('0');
 	_putchar('x');
 
@@ -46,5 +56,5 @@ int imprime_pointer(va_list given_args, __attribute__((unused)) int *flags)
 
 		_putchar(ch);
 	}
-	return (size + 2);
+	return (size + 2 + flag);
 }
