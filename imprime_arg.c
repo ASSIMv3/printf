@@ -20,11 +20,12 @@ int (*imprime_arg(char c))(va_list, int *)
 		{'x', imprime_hex_lower},
 		{'X', imprime_hex_upper},
 		{'S', imprime_String},
-		{'p', imprime_pointer}
+		{'p', imprime_pointer},
+		{'r', imprime_reverse}
 	};
 	int i = 0;
 
-	while (i < 12)
+	while (i < 13)
 	{
 		if (c == data_types[i].c)
 			return (data_types[i].func);
