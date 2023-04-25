@@ -89,7 +89,7 @@ int imprime_hex_lower(va_list given_args, int *flags)
  * @flags: list of flags
  * Return: the size of the number.
  */
-int imprime_hex_upper(va_list given_args, __attribute__((unused)) int *flags)
+int imprime_hex_upper(va_list given_args, int *flags)
 {
 	unsigned int num;
 	char hex_digits[] = "0123456789ABCDEF";
@@ -105,6 +105,12 @@ int imprime_hex_upper(va_list given_args, __attribute__((unused)) int *flags)
 
 	i = 0;
 	printed_chars = 0;
+	if (flags[2])
+	{
+		_putchar('0');
+		_putchar('X');
+		printed_chars += 2;
+	}
 	while (num > 0)
 	{
 		digits[i] = hex_digits[num % 16];
