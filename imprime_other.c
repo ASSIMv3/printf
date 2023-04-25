@@ -58,3 +58,29 @@ int imprime_pointer(va_list given_args, int *flags)
 	}
 	return (size + 2 + flag);
 }
+
+/**
+ * imprime_reverse - a function that reverses a string
+ *
+ * @given_args: a list of a given arguments.
+ * @flags: list of flags
+ * Return: the size of the number.
+ */
+int imprime_reverse(va_list given_args, __attribute__((unused)) int *flags)
+{
+	char *str;
+	int i, j;
+
+	str = va_arg(given_args, char *);
+	if (!str)
+		str = "(null)";
+
+	i = 0;
+	while (str[i])
+		i++;
+
+	for (j = i - 1; j >= 0; j--)
+		_putchar(str[j]);
+
+	return (i);
+}
