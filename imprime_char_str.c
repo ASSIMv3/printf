@@ -96,5 +96,6 @@ int imprime_String(va_list given_args, __attribute__((unused)) int *flags)
 			printed_chars++;
 		}
 
-		return (printed_chars);
+	}
+	return (printed_chars);
 }
