@@ -11,17 +11,16 @@ int imprime_pointer(va_list given_args, __attribute__((unused)) int *flags)
 {
 	void *ptr;
 	unsigned long int addr;
-	unsigned long int mask = 0xf;
-	unsigned long int hex_digit;
-	int i, size = sizeof(void *) * 2;
+	unsigned int hex_digit[100];
+	int i, size;
 	char ch;
-	int leading_zeros = 1;
 
 	ptr = va_arg(given_args, void *);
 	if (!ptr)
 		return (_printf("(nil)"));
 
 	addr = (unsigned long int)ptr;
+	size = 0;
 
 	_putchar('0');
 	_putchar('x');
@@ -31,16 +30,19 @@ int imprime_pointer(va_list given_args, __attribute__((unused)) int *flags)
 		_putchar('0');
 		return (3);
 	}
+
+	while (addr > 0)
+	{
+		hex_digit[size] = addr % 16;
+		addr /= 16;
+		size++;
+	}
 	for (i = size - 1; i >= 0; i--)
 	{
-		hex_digit = (addr >> (i * 4)) & mask;
-		if (hex_digit == 0 && leading_zeros)
-			continue;
-		leading_zeros = 0;
-		if (hex_digit < 10)
-			ch = '0' + hex_digit;
+		if (hex_digit[i] < 10)
+			ch = '0' + hex_digit[i];
 		else
-			ch = 'W' + hex_digit;
+			ch = 'W' + hex_digit[i];
 
 		_putchar(ch);
 	}
